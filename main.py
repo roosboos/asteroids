@@ -34,8 +34,17 @@ def main():
             
         screen.fill("black")
 
-        # Use the groups instead of the player directly
+        # update all objects
         updatable.update(dt)
+        
+        #add collision code
+        for asteroid in asteroids:
+            if asteroid.collision(player):
+                print("Game over!")
+                import sys
+                sys.exit()
+        
+        #draw all objects
         for drawable_obj in drawable:
             drawable_obj.draw(screen)
 
