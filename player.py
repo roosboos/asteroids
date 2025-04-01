@@ -49,8 +49,8 @@ class Player(CircleShape):
         shot = Shot(self.position.x, self.position.y) 
         #set the shot's velocity:
         #start with a vector pointing upward
-        shot_direction = pygame.Vector2(0, -1)
+        shot_direction = pygame.Vector2(0, 1)
         #rotate it in the direction the player is facing
-        shot_direction = shot_direction.rotate(-self.rotation)
+        shot_direction = shot_direction.rotate(self.rotation)
         #scale it up to make it move faster
         shot.velocity = shot_direction * PLAYER_SHOOT_SPEED
